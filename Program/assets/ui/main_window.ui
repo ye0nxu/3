@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+     <width>900</width>
+     <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Auto Labeling Tool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="rootLayout" stretch="0,4,1">
+    <property name="leftMargin">
+     <number>18</number>
+    </property>
+    <property name="topMargin">
+     <number>18</number>
+    </property>
+    <property name="rightMargin">
+     <number>18</number>
+    </property>
+    <property name="bottomMargin">
+     <number>18</number>
+    </property>
+    <property name="spacing">
+     <number>14</number>
+    </property>
+
+    <item>
+     <widget class="QFrame" name="frameTopBar">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <layout class="QHBoxLayout" name="topBarLayout">
+       <property name="leftMargin">
+        <number>14</number>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>14</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelAppTitle">
+         <property name="text">
+          <string> Auto Labeling Tool</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelSessionState">
+         <property name="text">
+          <string>세션 준비</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="topBarSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnOpenVideo">
+         <property name="text">
+          <string>영상 열기</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnExportResult">
+         <property name="text">
+          <string>결과 내보내기</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnExit">
+         <property name="text">
+          <string>종료</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="topRowLayout" stretch="3,2">
+      <property name="spacing">
+       <number>14</number>
+      </property>
+
+      <item>
+       <widget class="QFrame" name="cardVideo">
+        <property name="minimumSize">
+         <size>
+          <width>520</width>
+          <height>280</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="videoCardLayout">
+         <property name="leftMargin">
+          <number>16</number>
+         </property>
+         <property name="topMargin">
+          <number>16</number>
+         </property>
+         <property name="rightMargin">
+          <number>16</number>
+         </property>
+         <property name="bottomMargin">
+          <number>16</number>
+         </property>
+         <property name="spacing">
+          <number>12</number>
+         </property>
+
+         <item>
+          <widget class="QLineEdit" name="editVideoFileName">
+           <property name="minimumHeight">
+            <number>40</number>
+           </property>
+           <property name="placeholderText">
+            <string>영상 파일 경로 / 이름</string>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QFrame" name="framePlayer">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <layout class="QVBoxLayout" name="playerLayout">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>10</number>
+            </property>
+
+            <item>
+             <widget class="QFrame" name="videoView">
+              <property name="minimumHeight">
+               <number>170</number>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <layout class="QVBoxLayout" name="videoViewLayout">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="labelVideoPlaceholder">
+                 <property name="text">
+                  <string>영상 미리보기</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+
+            <item>
+             <layout class="QHBoxLayout" name="timelineLayout">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelTime">
+                <property name="minimumWidth">
+                 <number>100</number>
+                </property>
+                <property name="text">
+                 <string>00:00:00.0</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="sliderTimeline">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+
+            <item>
+             <layout class="QHBoxLayout" name="controlsLayout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <item>
+               <widget class="QToolButton" name="btnSeekBack">
+                <property name="text">
+                 <string>뒤로</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnPrevFrame">
+                <property name="text">
+                 <string>이전 프레임</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnPlayPause">
+                <property name="text">
+                 <string>재생</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnNextFrame">
+                <property name="text">
+                 <string>다음 프레임</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="controlsSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <item>
+       <layout class="QVBoxLayout" name="sidebarLayout" stretch="0,0,0,0,1">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+
+        <item>
+         <widget class="QFrame" name="cardLabelSetting">
+          <property name="minimumSize">
+           <size>
+            <width>260</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="labelSettingLayout">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
+            <number>16</number>
+           </property>
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelLabelSettingTitle">
+             <property name="text">
+              <string>모델 설정</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelLabelSettingHint">
+             <property name="text">
+              <string>추적 / 분할 / 임계값 옵션을 이 영역에 배치</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="settingActionLayout" columnstretch="1,1,1">
+             <property name="horizontalSpacing">
+              <number>8</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>6</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="btnPresetFast">
+               <property name="minimumHeight">
+                <number>30</number>
+               </property>
+               <property name="text">
+                <string>빠름</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="btnPresetBalanced">
+               <property name="minimumHeight">
+                <number>30</number>
+               </property>
+               <property name="text">
+                <string>균형</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="btnPresetQuality">
+               <property name="minimumHeight">
+                <number>30</number>
+               </property>
+               <property name="text">
+                <string>품질</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QFrame" name="cardClassList">
+          <property name="minimumSize">
+           <size>
+            <width>260</width>
+            <height>160</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="classListLayout">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
+            <number>16</number>
+           </property>
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+           <widget class="QLabel" name="labelClassListTitle">
+             <property name="text">
+              <string>객체 클래스</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QFrame" name="cardUserInput">
+          <property name="minimumSize">
+           <size>
+            <width>260</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="userInputLayout">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>16</number>
+           </property>
+           <property name="bottomMargin">
+            <number>16</number>
+           </property>
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelUserInputTitle">
+             <property name="text">
+              <string>사용자 입력</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPlainTextEdit" name="textUserInput">
+             <property name="plainText">
+              <string>rgb
+이미지 장수</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <layout class="QHBoxLayout" name="startStopLayout" stretch="1,1">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnStart">
+             <property name="minimumHeight">
+              <number>34</number>
+             </property>
+             <property name="text">
+              <string>시작</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStop">
+             <property name="minimumHeight">
+              <number>34</number>
+             </property>
+             <property name="text">
+              <string>중지</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+        <item>
+         <spacer name="sidebarSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+
+     </layout>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="bottomRowLayout" stretch="3,2">
+      <property name="spacing">
+       <number>14</number>
+      </property>
+
+      <item>
+       <widget class="QFrame" name="cardThumbs">
+        <property name="minimumSize">
+         <size>
+          <width>520</width>
+          <height>170</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="thumbsLayout">
+         <property name="leftMargin">
+          <number>16</number>
+         </property>
+         <property name="topMargin">
+          <number>16</number>
+         </property>
+         <property name="rightMargin">
+          <number>16</number>
+         </property>
+         <property name="bottomMargin">
+          <number>16</number>
+         </property>
+         <property name="spacing">
+          <number>10</number>
+         </property>
+
+         <item>
+          <layout class="QHBoxLayout" name="thumbFilterLayout">
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QToolButton" name="tabAll">
+             <property name="text">
+              <string>전체 (확인 + 보류)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="tabOk">
+             <property name="text">
+              <string>확인 완료</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="tabHold">
+             <property name="text">
+              <string>보류</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="thumbFilterSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+
+         <item>
+          <widget class="QListWidget" name="listThumbs">
+           <property name="viewMode">
+            <enum>QListView::IconMode</enum>
+           </property>
+           <property name="resizeMode">
+            <enum>QListView::Adjust</enum>
+           </property>
+           <property name="movement">
+            <enum>QListView::Static</enum>
+           </property>
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>112</width>
+             <height>84</height>
+            </size>
+           </property>
+           <property name="uniformItemSizes">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QFrame" name="cardLog">
+        <property name="minimumSize">
+         <size>
+          <width>260</width>
+          <height>170</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="logLayout">
+         <property name="leftMargin">
+          <number>16</number>
+         </property>
+         <property name="topMargin">
+          <number>16</number>
+         </property>
+         <property name="rightMargin">
+          <number>16</number>
+         </property>
+         <property name="bottomMargin">
+          <number>16</number>
+         </property>
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelLogTitle">
+           <property name="text">
+            <string>로그</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textLog">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>[시간] 현재 프레임 추출 현황 / 총 프레임 수
+[시간] 감지 중인 객체
+
+완료 / 에러 / 사용자 액션 로그를 이 영역에 출력</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

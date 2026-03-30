@@ -1,0 +1,716 @@
+﻿/* ============================================================================
+   SL Theme - DARK (main_window.ui)
+   Accent: SL Blue / Deep Navy
+   ============================================================================ */
+
+* {
+    font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Segoe UI";
+    font-size: 10pt;
+    font-weight: 400;
+    color: #E6EDF8;
+}
+
+/* ---- remove per-line grey bars (label background fill) ---- */
+QLabel {
+    background: transparent;
+    border: none;
+}
+/* 湲곕낯 ?꾨젅?꾩? ?щ챸(以?諛곌꼍 ?쒓굅) */
+QFrame {
+    background: transparent;
+    border: none;
+}
+
+/* 移대뱶/而⑦뀒?대꼫 ?꾨젅?꾨쭔 ?ㅼ떆 ?먮옒?濡?蹂듦뎄 */
+QFrame#frameTopBar,
+QFrame#cardVideo,
+QFrame#cardLabelSetting,
+QFrame#cardClassList,
+QFrame#cardUserInput,
+QFrame#cardThumbs,
+QFrame#cardLog,
+QFrame[pageCard="true"],
+QFrame#pageNavPanel,
+QFrame#quickActionsCard,
+QFrame#videoView,
+QFrame#videoLoadPreviewFrame,
+QFrame#secondVideoView {
+    /* ?ш린 媛믪? 湲곗〈 ?뚮쭏 媛??좎? */
+    border: 1px solid; /* ?꾨옒?먯꽌 ?뚮쭏蹂꾨줈 ?ㅼ떆 吏??*/
+}
+
+QMainWindow,
+QWidget#centralwidget {
+    background-color: #111722;
+}
+
+/* 移대뱶 ?대? 以꾨Т??諛⑹?: 湲곕낯 ?꾩젽? ?щ챸 */
+QWidget {
+    background: transparent;
+}
+
+/* QLabel???먭린 諛곌꼍 移좏븯??嫄?諛⑹? */
+QLabel {
+    background: transparent;
+}
+
+/* Tooltip */
+QToolTip {
+    color: #E6EDF8;
+    background-color: rgba(26, 34, 48, 240);
+    border: 1px solid rgba(122, 162, 255, 90);
+    border-left: 3px solid #7AA2FF;
+    padding: 6px 10px;
+}
+
+/* Statusbar */
+QStatusBar {
+    background-color: #1A2230;
+    color: #9EB0CC;
+}
+
+/* -----------------------------
+   Top labels
+------------------------------ */
+QLabel#labelAppTitle {
+    color: #F3F7FF; /* deep navy */
+    font: 700 12pt "Pretendard";
+}
+
+QLabel#labelSessionState {
+    color: #7AA2FF;
+    font: 700 9pt "Pretendard";
+}
+
+QLabel#labelVideoPlaceholder,
+QLabel#labelSecondVideoPlaceholder,
+QLabel#labelVideoLoadPreview {
+    color: #9EB0CC;
+    font: 650 11pt "Pretendard";
+    letter-spacing: 0.4px;
+}
+
+QLabel#labelVideoLoadPreview {
+    padding: 6px;
+}
+QLabel#labelVideoLoadPreview:hover {
+    color: #7AA2FF;
+}
+
+/* Progress */
+QLabel#labelProgressStage {
+    color: #7AA2FF;
+    font: 700 9pt "Pretendard";
+}
+
+QLabel#labelProgressFrame,
+QLabel#labelProgressRemain,
+QLabel#labelSecondStageStepState,
+QLabel#labelSecondStageStatus {
+    color: #C6D3E7;
+    font: 500 9pt "Pretendard";
+}
+
+QLabel#labelSecondStageStatus {
+    color: #9EB0CC;
+    font: 500 9pt "Pretendard";
+}
+
+QLabel#labelTime {
+    color: #7AA2FF;
+    font: 800 9pt "Pretendard";
+}
+
+QLabel#labelNewObjectSectionTitle {
+    color: #C6D3E7;
+    font: 800 10pt "Pretendard";
+}
+
+QLabel#labelResultLogTitle {
+    color: #F3F7FF;
+    font: 800 12pt "Pretendard";
+}
+
+QLabel#labelResultSummaryTitle {
+    color: #F3F7FF;
+    font: 800 11pt "Pretendard";
+}
+
+/* Titles */
+QLabel#labelLabelSettingTitle,
+QLabel#labelClassListTitle,
+QLabel#labelUserInputTitle,
+QLabel#labelLogTitle,
+QLabel#labelPageCardTitle,
+QLabel#labelQuickActionsTitle,
+QLabel#labelNavBrandTitle {
+    color: #F3F7FF;
+    font: 800 10pt "Pretendard";
+}
+
+/* Home hero */
+QLabel#labelHomeHeroTitle {
+    color: #F3F7FF;
+    font: 900 18pt "Pretendard";
+    letter-spacing: 0.6px;
+}
+QLabel#labelHomeHeroSubtitle {
+    color: #9EB0CC;
+    font: 500 9pt "Pretendard";
+}
+
+/* -----------------------------
+   Frames / Cards
+------------------------------ */
+QFrame#frameTopBar,
+QFrame#cardVideo,
+QFrame#cardLabelSetting,
+QFrame#cardClassList,
+QFrame#cardUserInput,
+QFrame#cardThumbs,
+QFrame#cardLog,
+QFrame[pageCard="true"],
+QFrame#pageNavPanel,
+QFrame#quickActionsCard {
+    background-color: #1A2230;
+    border: 1px solid #36455F;
+    border-radius: 12px;
+}
+
+/* Video containers */
+QFrame#videoView,
+QFrame#videoLoadPreviewFrame,
+QFrame#secondVideoView {
+    background-color: #131D2A;
+    border: 1px solid #36455F;
+    border-radius: 12px;
+}
+
+/* -----------------------------
+   Navigation Buttons
+------------------------------ */
+QPushButton[navButton="true"] {
+    text-align: left;
+    padding-left: 12px;
+    border-radius: 12px;
+    min-height: 36px;
+    background-color: #223047;
+    border: 1px solid #36455F;
+    color: #E6EDF8;
+    font: 700 9pt "Pretendard";
+}
+
+QPushButton[navButton="true"]:hover {
+    border-color: #7AA2FF;
+    background-color: #2B3B56;
+}
+
+QPushButton[navButton="true"]:checked {
+    background-color: #7AA2FF;
+    border-color: #7AA2FF;
+    color: #1A2230;
+    font: 900 9pt "Pretendard";
+}
+
+/* Quick Action Buttons */
+QPushButton[quickAction="true"] {
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 12px;
+    min-height: 32px;
+    background-color: #223047;
+    border: 1px solid #36455F;
+    color: #E6EDF8;
+    font: 800 9pt "Pretendard";
+}
+
+QPushButton[quickAction="true"]:hover {
+    border-color: #7AA2FF;
+    background-color: #2B3B56;
+}
+
+/* -----------------------------
+   Inputs
+------------------------------ */
+
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    background-color: #1A2230;
+    border-radius: 8px;
+    border: 1px solid #36455F;
+    padding: 4px 8px;
+    min-height: 26px;
+    color: #E6EDF8;
+}
+
+
+/* hover/focus??洹몃?濡?*/
+QLineEdit:hover, QSpinBox:hover, QDoubleSpinBox:hover, QComboBox:hover {
+    border-color: #5D7AA6;
+}
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border-color: #7AA2FF;
+}
+
+/* SpinBox??踰꾪듉 ?곸뿭 ?뚮Ц????而ㅻ낫?ъ꽌 踰꾪듉 ???щ갚 以꾩엫 */
+QSpinBox::up-button, QSpinBox::down-button,
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+    width: 14px;               /* 湲곕낯蹂대떎 以꾩엫 */
+    border: none;
+    background: transparent;
+}
+QSpinBox::up-arrow, QSpinBox::down-arrow,
+QDoubleSpinBox::up-arrow, QDoubleSpinBox::down-arrow {
+    width: 6px;
+    height: 6px;
+}
+
+/* ComboBox dropdown??媛숈씠 異뺤냼 */
+QComboBox::drop-down {
+    border: none;
+    width: 22px;               /* 28 -> 22 */
+}
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #9EB0CC;
+    margin-right: 8px;
+}
+QComboBox QAbstractItemView {
+    background-color: #1A2230;
+    color: #E6EDF8;
+    border: 1px solid #36455F;
+    selection-background-color: #7AA2FF;
+    selection-color: #1A2230;
+    outline: none;
+}
+QComboBox QAbstractItemView::item {
+    min-height: 24px;
+}
+
+
+/* -----------------------------
+   Buttons (General)
+------------------------------ */
+QPushButton {
+    border: 1px solid #36455F;
+    border-radius: 12px;
+    background-color: #223047;
+    min-height: 34px;
+    padding: 0 12px;
+    color: #E6EDF8;
+    font: 750 9pt "Pretendard";
+}
+
+QPushButton:hover {
+    background-color: #2B3B56;
+    border-color: #5D7AA6;
+}
+
+QPushButton:pressed {
+    background-color: #24334B;
+    border-color: #4D678F;
+}
+
+QPushButton:disabled {
+    background-color: #1B2637;
+    border-color: #2A364A;
+    color: rgba(230, 237, 248, 120);
+}
+
+/* Top-right bar buttons */
+QPushButton#btnOpenVideo,
+QPushButton#btnExportResult {
+    background-color: #223047;
+    border-color: #36455F;
+    min-height: 30px;
+    padding: 0 10px;
+}
+
+QPushButton#btnOpenVideo:hover,
+QPushButton#btnExportResult:hover {
+    border-color: #7AA2FF;
+}
+
+
+/* Second stage controls */
+QPushButton#btnSecondStageDone {
+    background-color: #7AA2FF;
+    border-color: #7AA2FF;
+    color: #1A2230;
+    font: 900 9pt "Pretendard";
+}
+QPushButton#btnSecondStageDone:hover {
+    background-color: #2B79FF;
+    border-color: #2B79FF;
+}
+
+QPushButton#btnSecondStageNext,
+QPushButton#btnSecondStagePrev {
+    min-height: 32px;
+    font: 900 10pt "Pretendard";
+}
+
+/* New object labeling uses objectName selectors so the generic QPushButton theme does not wash out accent colors. */
+QPushButton#btnRun,
+QPushButton#btnStop,
+QPushButton#btnExport {
+    color: #FFFFFF;
+    font: 900 10pt "Pretendard";
+    min-height: 38px;
+    padding: 0 14px;
+}
+
+QPushButton#btnRun {
+    background-color: #22C55E;
+    border: 1px solid #22C55E;
+}
+QPushButton#btnRun:hover {
+    background-color: #16A34A;
+    border-color: #16A34A;
+}
+QPushButton#btnRun:disabled {
+    background-color: rgba(34, 197, 94, 0.42);
+    border-color: rgba(34, 197, 94, 0.42);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+QPushButton#btnStop {
+    background-color: #EF4444;
+    border: 1px solid #EF4444;
+}
+QPushButton#btnStop:hover {
+    background-color: #DC2626;
+    border-color: #DC2626;
+}
+QPushButton#btnStop:disabled {
+    background-color: rgba(239, 68, 68, 0.42);
+    border-color: rgba(239, 68, 68, 0.42);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+QPushButton#btnExport {
+    background-color: #2563EB;
+    border: 1px solid #2563EB;
+}
+QPushButton#btnExport:hover {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
+QPushButton#btnExport:disabled {
+    background-color: rgba(37, 99, 235, 0.42);
+    border-color: rgba(37, 99, 235, 0.42);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+QPushButton[secondaryControl="true"] {
+    min-width: 44px;
+    max-width: 44px;
+    min-height: 36px;
+    max-height: 36px;
+    border-radius: 12px;
+    font: 800 10pt "Pretendard";
+}
+
+QLabel#imagePreview,
+QLabel#videoPreview {
+    background-color: #131D2A;
+    border: 1px solid #36455F;
+    border-radius: 14px;
+    color: #9EB0CC;
+    font: 700 11pt "Pretendard";
+}
+
+QPlainTextEdit#logArea {
+    background-color: #091224;
+    color: #DBEAFE;
+    border: 1px solid #36455F;
+    border-radius: 12px;
+    padding: 8px;
+    font-family: Consolas, "D2Coding", monospace;
+}
+
+/* Tool Buttons */
+QToolButton {
+    border: 1px solid #36455F;
+    border-radius: 12px;
+    background-color: #223047;
+    min-height: 30px;
+    padding: 0 10px;
+    color: #E6EDF8;
+    font: 750 9pt "Pretendard";
+}
+QToolButton:hover {
+    background-color: #2B3B56;
+    border-color: #5D7AA6;
+}
+
+/* -----------------------------
+   Tabs (thumb filter)
+------------------------------ */
+QToolButton#tabAll,
+QToolButton#tabOk,
+QToolButton#tabHold,
+QToolButton#tabDrop {
+    border: 1px solid #36455F;
+    border-radius: 12px;
+    background-color: #223047;
+    color: #E6EDF8;
+    min-height: 30px;
+    padding: 0 10px;
+    font: 800 9pt "Pretendard";
+}
+
+QToolButton#tabAll:hover,
+QToolButton#tabOk:hover,
+QToolButton#tabHold:hover,
+QToolButton#tabDrop:hover {
+    border-color: #7AA2FF;
+    background-color: #2B3B56;
+}
+
+QToolButton#tabAll:checked,
+QToolButton#tabOk:checked,
+QToolButton#tabHold:checked,
+QToolButton#tabDrop:checked {
+    background-color: #7AA2FF;
+    border-color: #7AA2FF;
+    color: #1A2230;
+}
+
+/* -----------------------------
+   Lists / Tables
+------------------------------ */
+QListWidget {
+    background-color: #1A2230;
+    border-radius: 10px;
+    border: 1px solid #36455F;
+    padding: 6px;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+QListWidget::item:hover {
+    background-color: rgba(122, 162, 255, 40);
+}
+
+QListWidget::item:selected {
+    background-color: #7AA2FF;
+    color: #1A2230;
+}
+
+QTableWidget {
+    background-color: #1A2230;
+    border: 1px solid #36455F;
+    border-radius: 10px;
+    gridline-color: #2A364A;
+    selection-background-color: #7AA2FF;
+    selection-color: #1A2230;
+}
+
+QHeaderView::section {
+    background-color: #223047;
+    color: #E6EDF8;
+    border: none;
+    border-right: 1px solid #36455F;
+    padding: 8px;
+    font: 800 9pt "Pretendard";
+}
+
+
+/* -----------------------------
+   ProgressBar (LIGHT) - round + white text
+------------------------------ */
+QProgressBar#progressPipeline {
+    border: 1px solid #36455F;
+    border-radius: 10px;
+    background-color: #1A2230;
+    text-align: center;
+
+    /* % 湲??*/
+    color: #E6EDF8;
+
+    min-height: 18px;
+
+    /* ?쇱슫??源붾걫?섍쾶 蹂댁씠寃?*/
+    padding: 0px;
+}
+
+QProgressBar#progressPipeline::chunk {
+    background-color: #7AA2FF;
+
+    /* ?듭떖: chunk??媛숈? radius */
+    border-radius: 10px;
+}
+
+
+/* -----------------------------
+   Scrollbars
+------------------------------ */
+QScrollBar:horizontal {
+    border: none;
+    background: #283650;
+    height: 8px;
+    margin: 0px 22px 0 22px;
+}
+QScrollBar::handle:horizontal {
+    background: #7AA2FF;
+    min-width: 25px;
+    border-radius: 4px;
+}
+QScrollBar:vertical {
+    border: none;
+    background: #283650;
+    width: 8px;
+    margin: 22px 0 22px 0;
+}
+QScrollBar::handle:vertical {
+    background: #7AA2FF;
+    min-height: 25px;
+    border-radius: 4px;
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: none;
+    border: none;
+}
+
+/* -----------------------------
+   QMessageBox / Dialogs (LIGHT)
+------------------------------ */
+QDialog, QMessageBox {
+    background-color: #1A2230;
+}
+
+QMessageBox QLabel {
+    color: #E6EDF8;
+    font: 600 10pt "Pretendard";
+}
+
+QMessageBox QPushButton {
+    background-color: #223047;
+    border: 1px solid #36455F;
+    color: #E6EDF8;
+    border-radius: 12px;
+    padding: 6px 12px;
+    min-height: 30px;
+    font: 850 9pt "Pretendard";
+}
+QMessageBox QPushButton:hover {
+    border-color: #7AA2FF;
+    background-color: #2B3B56;
+}
+
+/* =========================
+   2?④퀎 ?붾㈃ 踰꾪듉 ???섏젙
+   ========================= */
+/* =========================
+   Start/Stop 踰꾪듉 ???뺣━
+   ========================= */
+
+/* ?숆린???쒖옉(?쇱そ) - 珥덈줉 */
+QPushButton#btnStart {
+    background-color: #22C55E;
+    border-color: #16A34A;
+    color: #1A2230;
+    font: 900 9pt "Pretendard";
+}
+QPushButton#btnStart:hover {
+    background-color: #16A34A;
+    border-color: #16A34A;
+}
+QPushButton#btnStart:pressed {
+    background-color: #15803D;
+    border-color: #15803D;
+}
+
+/* 怨좎냽 ?쒖옉(媛?대뜲) - ?낆? ?뚯깋 */
+QPushButton#btnStartFast {
+    background-color: #4A5568;
+    border-color: #5C6678;
+    color: #E6EDF8;
+    font: 900 9pt "Pretendard";
+}
+QPushButton#btnStartFast:hover {
+    background-color: #5C6678;
+    border-color: #9CA3AF;
+}
+QPushButton#btnStartFast:pressed {
+    background-color: #495163;
+    border-color: #9CA3AF;
+}
+
+/* 以묒?(?ㅻⅨ履? - 鍮④컯 ?좎? */
+QPushButton#btnStop {
+    background-color: #E23B4A;
+    border-color: #E23B4A;
+    color: #F3F7FF;
+    font: 900 9pt "Pretendard";
+}
+QPushButton#btnStop:hover {
+    background-color: #F04B5A;
+    border-color: #F04B5A;
+}
+QPushButton#btnStop:pressed {
+    background-color: #C92E3C;
+    border-color: #C92E3C;
+}
+
+/* 以??? 諛곌꼍 ?쒓굅?? Designer?먯꽌 rowBg=true ???꾩젽留?*/
+QWidget[rowBg="true"],
+QFrame[rowBg="true"] {
+    background: transparent;
+    border: none;
+}
+
+/* Final override for the new object labeling page: keep these at the end so legacy btnStop rules cannot override them. */
+QFrame#newObjectWorkCard QPushButton#btnRun,
+QFrame#newObjectWorkCard QPushButton#btnStop,
+QFrame#newObjectResultCard QPushButton#btnExport {
+    color: #FFFFFF;
+    font: 900 10pt "Pretendard";
+    min-height: 38px;
+    padding: 0 14px;
+}
+QFrame#newObjectWorkCard QPushButton#btnRun {
+    background-color: #22C55E;
+    border: 1px solid #22C55E;
+}
+QFrame#newObjectWorkCard QPushButton#btnRun:hover {
+    background-color: #16A34A;
+    border-color: #16A34A;
+}
+QFrame#newObjectWorkCard QPushButton#btnRun:disabled {
+    background-color: rgba(34, 197, 94, 0.42);
+    border-color: rgba(34, 197, 94, 0.42);
+}
+QFrame#newObjectWorkCard QPushButton#btnStop {
+    background-color: #EF4444;
+    border: 1px solid #EF4444;
+}
+QFrame#newObjectWorkCard QPushButton#btnStop:hover {
+    background-color: #DC2626;
+    border-color: #DC2626;
+}
+QFrame#newObjectWorkCard QPushButton#btnStop:disabled {
+    background-color: rgba(239, 68, 68, 0.42);
+    border-color: rgba(239, 68, 68, 0.42);
+}
+QFrame#newObjectResultCard QPushButton#btnExport {
+    background-color: #2563EB;
+    border: 1px solid #2563EB;
+}
+QFrame#newObjectResultCard QPushButton#btnExport:hover {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
+QFrame#newObjectResultCard QPushButton#btnExport:disabled {
+    background-color: rgba(37, 99, 235, 0.42);
+    border-color: rgba(37, 99, 235, 0.42);
+}
+
