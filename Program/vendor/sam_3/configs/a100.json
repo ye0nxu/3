@@ -1,0 +1,81 @@
+{
+  "sam3_root": "../../sam3",
+  "run_root": "../runs",
+  "device": "cuda",
+  "prompts": ["car.", "truck.", "bus.", "van."],
+  "video": {
+    "keyframe_interval": 1,
+    "max_frames": 0,
+    "force_detect_when_empty": true,
+    "detect_new_only_for_active_ids": true,
+    "active_track_iou_threshold": 0.7,
+    "active_track_refresh_interval": 2
+  },
+  "sam3": {
+    "checkpoint": "checkpoints/sam3.pt",
+    "bpe": "assets/bpe_simple_vocab_16e6.txt.gz",
+    "confidence_threshold": 0.42,
+    "infer_size": [1280, 720],
+    "use_amp": true
+  },
+  "detections": {
+    "nms_iou_threshold": 0.6,
+    "min_area": 80,
+    "max_per_prompt": 0,
+    "max_total": 0
+  },
+  "tracker": {
+    "backend": "bytetrack",
+    "iou_match_threshold": 0.25,
+    "max_missing_frames": 24,
+    "min_hits": 1,
+    "max_prediction_frames": 4,
+    "prediction_min_score": 0.2,
+    "bytetrack": {
+      "track_activation_threshold": 0.22,
+      "lost_track_buffer": 60,
+      "minimum_matching_threshold": 0.68,
+      "minimum_consecutive_frames": 1,
+      "enable_unmatched_spawn": true,
+      "spawn_min_score": 0.3,
+      "spawn_iou_threshold": 0.45,
+      "det_match_iou_threshold": 0.2,
+      "prediction_velocity_decay": 0.78,
+      "prediction_score_decay": 0.88
+    },
+    "iou_fallback": {
+      "center_distance_weight": 0.35,
+      "max_center_distance_ratio": 1.2,
+      "prompt_mismatch_penalty": 0.2,
+      "prompt_match_bonus": 0.05,
+      "min_match_score": 0.05,
+      "bbox_smooth_alpha": 0.85,
+      "velocity_smooth_alpha": 0.7,
+      "velocity_decay": 0.92,
+      "prediction_velocity_decay": 0.78,
+      "prediction_score_decay": 0.88,
+      "max_velocity_ratio": 0.28
+    },
+    "optical_flow": {
+      "enabled": false,
+      "max_corners": 28,
+      "quality_level": 0.02,
+      "min_distance": 4.0,
+      "min_points": 6,
+      "max_track_misses": 3
+    }
+  },
+  "output": {
+    "save_preview_video": false,
+    "preview_fps": 0,
+    "save_masks": false,
+    "draw_tracker_predictions": true,
+    "show_progress": false,
+    "ui_emit_interval": 2,
+    "ui_preview_max_size": [1280, 720],
+    "live_preview": false,
+    "live_preview_window": "SAM3 Text Prompt Tracking Preview",
+    "live_preview_wait_ms": 1,
+    "live_preview_stop_on_q": true
+  }
+}
