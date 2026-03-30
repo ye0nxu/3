@@ -1,0 +1,25 @@
+{
+  "remote": {
+    "ssh": {
+      "host": "YOUR_SERVER_IP",
+      "port": 22,
+      "user": "your-username",
+      "password": "your-password"
+    },
+    "python": {
+      "llm": "G:/conda/envs/PJ_310_LLM_SAM3/python.exe",
+      "sam3": "G:/conda/envs/PJ_310_LLM_SAM3/python.exe",
+      "train": "G:/conda/envs/PJ_310_LLM_SAM3/python.exe"
+    },
+    "storage_base_root": "G:/KDT10_3_1team_KLIK/0_Program_",
+    "models": {
+      "llm": "G:/models/Qwen2.5-7B-Instruct",
+      "sam3_root": "G:/models/sam3"
+    },
+    "features": {
+      "llm_enabled": true,
+      "sam3_enabled": true,
+      "train_enabled": true
+    }
+  }
+}
